@@ -1,0 +1,10 @@
+@import '../styles/root-style.css';
+
+body {
+    background-image: var(--background-color);
+    height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+

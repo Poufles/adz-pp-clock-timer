@@ -1,0 +1,47 @@
+@import '../../styles/root-style.css';
+
+#comp-clock {
+    background-color: transparent;
+    border: 3px solid var(--primary-color);
+    border-radius: 50%;
+    box-shadow: 0 0 5px 5px var(--drop-shadow-color);
+    height: 290px;
+    width: 290px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--md-trans);
+}
+
+#comp-clock:hover {
+    box-shadow: 
+        0 0 5px 5px var(--drop-shadow-color),
+        0 0 5px 5px var(--drop-shadow-color),
+        0 0 5px 5px var(--drop-shadow-color);
+    transform: scale(1.025);
+}
+
+#comp-clock:active {
+    transform: scale(0.9);
+}
+
+#comp-clock:hover > #text-clock {
+    font-size: var(--xlr-fn);
+}
+
+#comp-clock:active > #text-clock {
+    font-size: var(--nm-fn);
+}
+
+#comp-clock:not(:hover):active {
+    transform: scale(1);
+}
+
+#comp-clock:not(:hover):active > #text-clock {
+    font-size: var(--lrg-fn);
+}
+
+#text-clock {
+    font-size: var(--lrg-fn);
+    transition: var(--md-trans);
+}

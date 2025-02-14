@@ -17,8 +17,8 @@
 
 #comp-clock:hover {
     box-shadow: 
-        0 0 5px 5px rgba(19, 30, 237, 1),
-        inset 0 0 5px 5px rgba(19, 30, 237, 1);
+        0 0 5px 5px rgba(19, 30, 237, 0.7),
+        inset 0 0 5px 5px rgba(19, 30, 237, 0.7);
     transform: scale(1.025);
 }
 

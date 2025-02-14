@@ -1,5 +1,10 @@
 @import '../../styles/root-style.css';
 
+svg.small {
+    height: 25px;
+    width: 25px;
+}
+
 .comp-soc-med > svg {
     fill: var(--primary-color);
     filter: drop-shadow(0 0 0 transparent);
@@ -26,15 +31,47 @@
     transition: var(--sm-trans);
 }
 
-.comp-btn:hover {
+.comp-btn.text {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--secondary-color);
+    padding: 0 15px;
+    height: 40px;
+    width: auto;
+    display: block;
+}
+
+.comp-btn.oblong {
+    border-radius: 7px;
+}
+
+.comp-btn.no-bg {
+    background-color: transparent;
+}
+
+.comp-btn.no-bg:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 5px rgba(151, 0, 0, 0.7));
+}
+
+.comp-btn.no-bg:active {
+    transform: scale(0.9);
+    filter: drop-shadow(0 0 5px rgba(151, 0, 0, 1));
+}
+
+.comp-btn:not(.no-bg):hover {
     transform: scale(1.05);
     box-shadow: 0 0 5px 3px rgba(19, 30, 237, 0.5);
 }
 
-.comp-btn:active {
+.comp-btn:not(.no-bg):active {
     background-color: var(--secondary-color);
     box-shadow: 0 0 5px 5px rgba(19, 30, 237, 0.5);
     transform: scale(0.9);
+}
+
+.comp-btn.text:active {
+    color: var(--primary-color)
 }
 
 .comp-btn:not(:hover):active {
@@ -48,7 +85,15 @@
     transition: var(--md-trans);
 }
 
-.comp-btn:hover > svg {
+.comp-btn:not(.no-bg):hover > svg {
+    transform: rotate(180deg);
+}
+
+.comp-btn.no-rotate:hover > svg {
+    transform: rotate(0deg);
+}
+
+.comp-btn.rotate > svg {
     transform: rotate(180deg);
 }
 
@@ -66,4 +111,12 @@
 
 .comp-btn.circle {
     border-radius: 50%;
+}
+
+.comp-btn#btn-delete > svg {
+    fill: #970000;
+}
+
+.comp-btn#btn-cancel {
+    color:rgba(151, 0, 0, 1);
 }

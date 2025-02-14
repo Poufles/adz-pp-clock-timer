@@ -4,5 +4,7 @@ body > div:not(:last-of-type) {
 
 .normal-spacing {
     display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 15px;
 }

@@ -1,0 +1,10 @@
+body > div:not(:last-of-type) {
+    margin-bottom: 15px;
+}
+
+.normal-spacing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}

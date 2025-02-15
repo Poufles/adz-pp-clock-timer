@@ -1,0 +1,71 @@
+@import '../../styles/root-style.css';
+@import '../buttons/buttons-icons-style.css';
+@import '../toggle-switch/switch-style.css';
+
+.comp-alarm-panel {
+    --_spacing: 60px;
+
+    background-color: rgba(255, 254, 244, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 0 15px 5px rgba(19, 30, 237, 0.3);
+    height: 900px;
+    max-width: 590px;
+    width: 100%;
+    min-width: calc(400px);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.comp-alarm-panel>#btn-add {
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 93%;
+    left: 50%;
+}
+
+.comp-alarm-panel>#top-section {
+    border-bottom: 4px solid var(--primary-color);
+    margin: var(--_spacing) var(--_spacing)  25px;
+    padding-bottom: 15px;
+    color: var(--primary-color);
+    font-size: var(--sm-fn);
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.comp-alarm-panel>#alarm-section {
+    box-shadow: inset 0 0 100px 100px transparent;
+    cursor: pointer;
+    mask-image: linear-gradient(180deg, #FFF 55%, rgba(0, 0, 0, 0) 95%);
+    height: 100%;
+    transition: var(--sm-trans);
+    overflow-y: scroll;
+    scrollbar-width: none;
+    scrollbar-color: transparent transparent;
+}
+
+.comp-alarm-panel>#alarm-section::-webkit-scrollbar {
+    display: none;
+}
+
+.comp-alarm-panel>#alarm-section>.alarm-item {
+    color: var(--primary-color);
+    font-size: var(--sm-fn);
+    height: 90px;
+    width: 100%;
+    padding: 0 var(--_spacing);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.comp-alarm-panel>#alarm-section>.alarm-item:hover {
+    box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.1);
+}
+
+.comp-alarm-panel>#alarm-section>.alarm-item>.alarm-actions {
+    display: flex;
+    align-items: center;
+}

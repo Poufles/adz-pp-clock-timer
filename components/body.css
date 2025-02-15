@@ -11,3 +11,22 @@ body {
 body.flex-column {
     flex-direction: column;
 }
+
+body.two-panel {
+}
+
+main {
+    max-width: 1440px;
+    width: 100%;
+    display: flex;
+}
+
+main > .mock-up {
+    color: white;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 1;
+}

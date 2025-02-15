@@ -1,0 +1,39 @@
+@import '../../styles/root-style.css';
+
+.comp-switch {
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    border-radius: 20px;
+    box-shadow: 0 0 transparent;
+    height: 40px;
+    width: 80px;
+    padding: 0 3px;
+    position: relative;
+    transition: var(--sm-trans);
+}
+
+.comp-switch > .circle-toggle {
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transition: var(--sm-trans);
+}
+
+.comp-switch:has(.circle-toggle.on) {
+    background-color: var(--primary-color);
+    justify-content: end;
+}
+
+.comp-switch > .circle-toggle.on {
+    background-color: var(--secondary-color);
+    left: 75%;
+}
+
+.comp-switch:hover {
+    box-shadow: 0 0 5px 5px rgba(19, 30, 237, 0.3);
+}

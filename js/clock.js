@@ -1,6 +1,11 @@
 const time_clock = document.querySelector('#text-clock');
+const comp_clock = document.querySelector('#comp-clock');
 
 time_clock.textContent = CurrentTime()
+
+comp_clock.addEventListener('click', () => {
+    // Add function here for the clean design
+})
 
 setInterval(() => CurrentTime(), 1000);
 

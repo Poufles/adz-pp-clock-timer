@@ -11,10 +11,11 @@
     height: 900px;
     max-width: 590px;
     width: 100%;
-    min-width: calc(400px);
+    min-width: 400px;
     display: flex;
     flex-direction: column;
     position: relative;
+    transition: var(--sm-trans);
 }
 
 .comp-alarm-panel>#btn-add {
@@ -24,9 +25,17 @@
     left: 50%;
 }
 
+.comp-alarm-panel>#btn-down {
+    display: none;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    left: 50%;
+    top: 0%;
+}
+
 .comp-alarm-panel>#top-section {
     border-bottom: 4px solid var(--primary-color);
-    margin: var(--_spacing) var(--_spacing)  25px;
+    margin: var(--_spacing) var(--_spacing) 25px;
     padding-bottom: 15px;
     color: var(--primary-color);
     font-size: var(--sm-fn);
@@ -40,6 +49,7 @@
     cursor: pointer;
     mask-image: linear-gradient(180deg, #FFF 55%, rgba(0, 0, 0, 0) 95%);
     height: 100%;
+    padding-bottom: calc(90px * 7 + 20px);
     transition: var(--sm-trans);
     overflow-y: scroll;
     scrollbar-width: none;
@@ -68,4 +78,48 @@
 .comp-alarm-panel>#alarm-section>.alarm-item>.alarm-actions {
     display: flex;
     align-items: center;
+}
+
+@media screen and (max-width: 980px) {
+    .comp-alarm-panel {
+        background-color: transparent;
+        box-shadow: none;
+        max-width: none;
+        width: 100%;
+        min-width: none;
+        height: 50%;
+    }
+
+    .comp-alarm-panel>#btn-down {
+        display: block;
+    }
+
+    .comp-alarm-panel>#top-section {
+        display: none;
+    }
+
+    .comp-alarm-panel>#alarm-section {
+        padding-bottom: calc(90px * 4 + 20px);
+    }
+
+    .comp-alarm-panel.unexpanded {
+        height: 0px;
+    }
+
+    .comp-alarm-panel.unexpanded>#btn-add {
+        display: none;
+    }
+
+    .comp-alarm-panel.unexpanded>#btn-down {
+        top: -33px;
+        left: 50%;
+    }
+
+    .comp-alarm-panel.unexpanded>#btn-down>svg {
+        transform: rotate(180deg);
+    }
+
+    .comp-alarm-panel.unexpanded>#alarm-section {
+        display: none;
+    }
 }

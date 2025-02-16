@@ -2,6 +2,11 @@
 @import '../buttons/buttons-icons-style.css';
 @import '../toggle-switch/switch-style.css';
 
+main:has(section#clock>#comp-clock.clean)>.comp-alarm-panel {
+    display: none;
+    width: 0%;
+}
+
 .comp-alarm-panel {
     --_spacing: 60px;
 
@@ -44,7 +49,8 @@
     transition-duration: var(--sm-trans);
 
     @starting-style {
-        display: flex
+        display: flex;
+        opacity: 0;
     }
 }
 
@@ -122,7 +128,15 @@
     }
 
     .comp-alarm-panel>#btn-down {
+        transition-behavior: allow-discrete;
+        transition-property: display opacity;
+        transition-duration: var(--sm-trans);
         display: block;
+        opacity: 1;
+
+        @starting-style {
+            opacity: 0
+        }
     }
 
     .comp-alarm-panel>#top-section {
@@ -135,7 +149,7 @@
 
     .comp-alarm-panel.unexpanded {
         display: flex;
-        height: 0px;
+        height: 0%;
         width: 100%;
     }
 
@@ -156,5 +170,21 @@
     .comp-alarm-panel.unexpanded>#alarm-section {
         height: 0%;
         display: none;
+    }
+
+    main:has(section#clock>#comp-clock.clean)>.comp-alarm-panel {
+        display: none;
+        height: 0%;
+        width: 100%;
+    }
+
+    main:has(section#clock>#comp-clock.clean)>.comp-alarm-panel>#btn-down {
+        display: none;
+        opacity: 0;
+    }
+    
+    main:has(section#clock>#comp-clock.clean)>.comp-alarm-panel>#btn-add {
+        display: none;
+        opacity: 0;
     }
 }

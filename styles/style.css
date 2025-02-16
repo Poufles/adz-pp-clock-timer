@@ -39,15 +39,15 @@ main>section#clock>#btn-hamburger {
     top: 0;
     right: 0;
     opacity: 0;
-    transition-duration: var(--sm-trans);
-    transition-behavior: allow-discrete;
-    transition-property: display opacity;
-    transition: opacity var(--sm-trans) var(--md-trans);
 }
 
 main:has(>.comp-alarm-panel.unexpanded)>section#clock>#btn-hamburger {
     display: flex;
     opacity: 1;
+    transition-duration: var(--sm-trans);
+    transition-behavior: allow-discrete;
+    transition-property: display opacity;
+    transition: opacity var(--sm-trans) var(--md-trans);
     
     @starting-style {
         opacity: 0;
@@ -59,14 +59,19 @@ main>section#clock>#author {
 
     color: var(--primary-color);
     text-align: center;
-
 }
 
 main>section#clock>#comp-clock {
     grid-area: clock;
 
     align-self: center;
+}
 
+main>section#clock:has(>#comp-clock.clean)>#author,
+main>section#clock:has(>#comp-clock.clean)>#socmed,
+main>section#clock:has(>#comp-clock.clean)>#btn-hamburger {
+    display: none;
+    opacity: 0;
 }
 
 main>section#clock>#socmed {
@@ -76,6 +81,18 @@ main>section#clock>#socmed {
     justify-self: center;
     display: flex;
     gap: 5px;
+}
+
+main>section#clock>#author,
+main>section#clock>#socmed {
+    transition-behavior: allow-discrete;
+    transition-duration: var(--sm-trans);
+    transition-property: display opacity;
+    opacity: 1;
+
+    @starting-style {
+        opacity: 0
+    }
 }
 
 @media screen and (max-width: 980px) {

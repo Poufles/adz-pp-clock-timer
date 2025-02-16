@@ -13,6 +13,31 @@
     align-items: center;
     justify-content: center;
     transition: var(--md-trans);
+    position: relative;
+}
+
+#comp-clock::before {
+    content: 'Tap on the clock to hide all';
+    color: rgba(255, 254, 244, 0.3);
+    font-style: italic;
+    white-space: nowrap;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transition-behavior: allow-discrete;
+    transition-property: display opacity;
+    transition-duration: var(--sm-trans);
+    opacity: 1;
+
+    @starting-style {
+        opacity: 0
+    }
+}
+
+#comp-clock.clean::before {
+    display: none;
+    opacity: 0;
 }
 
 #comp-clock:hover {

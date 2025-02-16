@@ -4,7 +4,7 @@
     background-color: transparent;
     border: 3px solid var(--primary-color);
     border-radius: 50%;
-    box-shadow: 
+    box-shadow:
         0 0 5px 5px rgba(19, 30, 237, 0.3),
         inset 0 0 5px 5px rgba(19, 30, 237, 0.3);
     height: 290px;
@@ -41,7 +41,7 @@
 }
 
 #comp-clock:hover {
-    box-shadow: 
+    box-shadow:
         0 0 5px 5px rgba(19, 30, 237, 0.7),
         inset 0 0 5px 5px rgba(19, 30, 237, 0.7);
     transform: scale(1.025);
@@ -51,12 +51,12 @@
     transform: scale(0.9);
 }
 
-#comp-clock:hover > #text-clock {
+#comp-clock:hover>#text-clock {
     font-size: var(--xlr-fn);
     white-space: nowrap;
 }
 
-#comp-clock:active > #text-clock {
+#comp-clock:active>#text-clock {
     font-size: var(--nm-fn);
 }
 
@@ -64,11 +64,38 @@
     transform: scale(1);
 }
 
-#comp-clock:not(:hover):active > #text-clock {
+#comp-clock:not(:hover):active>#text-clock {
     font-size: var(--lrg-fn);
 }
 
 #text-clock {
     font-size: var(--lrg-fn);
     transition: var(--md-trans);
+}
+
+@media screen and (max-width: 500px) {
+    #comp-clock {
+        height: 200px;
+        width: 200px;
+    }
+
+    #comp-clock::before {
+        font-size: 12px;
+    }
+
+    #text-clock {
+        font-size: var(--sm-fn);
+    }
+    
+    #comp-clock:hover>#text-clock {
+        font-size: var(--nm-fn);
+    }
+
+    #comp-clock:active>#text-clock {
+        font-size: var(--sm-fn);
+    }
+
+    #comp-clock:not(:hover):active>#text-clock {
+        font-size: var(--sm-fn);
+    }
 }

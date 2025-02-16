@@ -45,6 +45,12 @@ function TickedTimePeriod(chosen, other) {
     tickedTimePeriod = chosen.value
 }
 
+function CreateDelete(element, deleteButton) {
+    deleteButton.addEventListener('click', () => {
+        element.remove();
+    });
+}
+
 function CreateAlarm(insertionNode) {
     const itemLength = insertionNode.querySelectorAll('.alarm-item').length + 1;
     const hour_tens = document.querySelector('.comp-dialog #num-1');
@@ -72,5 +78,15 @@ function CreateAlarm(insertionNode) {
 
     insertionNode.appendChild(document.createRange().createContextualFragment(alarm_item_template));
 
-    AddToggleFunction(insertionNode.querySelector(`#alarm-item-${itemLength} #switch-${itemLength}`));
+    const newNode = insertionNode.querySelector(`#alarm-item-${itemLength}`);
+
+    AddToggleFunction(newNode.querySelector(`#switch-${itemLength}`));
+
+    CreateDelete(newNode, newNode.querySelector(`#btn-delete`));
+
+    hour_tens.value = '';
+    hour_ones.value = '';
+    min_tens.value = '';
+    min_ones.value = '';
+    TickedTimePeriod(btn_am, btn_pm);
 }

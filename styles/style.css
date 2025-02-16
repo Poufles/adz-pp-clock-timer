@@ -74,7 +74,4 @@ main>section#clock>#socmed {
         grid-auto-rows: min-content min-content 1fr;
         gap: 5px;
     }
-
-    main>section#clock>#comp-clock {
-    }
 }

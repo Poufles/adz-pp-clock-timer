@@ -13,15 +13,17 @@ body.flex-column {
 }
 
 body.two-panel {
+    min-height: 900px;
 }
 
 main {
+    padding: 0 30px;
     max-width: 1440px;
     width: 100%;
     display: flex;
 }
 
-main > .mock-up {
+main>.mock-up {
     color: white;
     height: 100%;
     width: 100%;
@@ -29,4 +31,18 @@ main > .mock-up {
     align-items: center;
     justify-content: center;
     flex-basis: 1;
+}
+
+@media screen and (max-width: 980px) {
+    main {
+        padding: 30px 0;
+        height: 100dvh;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    main>.mock-up {
+        height: 100%;
+        min-height: 450px;
+    }
 }

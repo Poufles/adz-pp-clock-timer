@@ -122,3 +122,36 @@
     justify-content: center;
     flex-direction: column;
 }
+
+@media screen and (max-width: 720px) {
+    .comp-dialog#add>#prompt {
+        height: 100px;
+        max-width: auto;
+        width: 300px;
+        padding: 20px 15px;
+    }
+
+    .comp-dialog#add>#prompt>#time>input[type=number] {
+        font-size: var(--sm-fn);
+        width: 30px;
+        height: auto;
+    }
+
+    .comp-dialog#add>#prompt>#time>label {
+        font-size: var(--sm-fn);
+    }
+
+    .comp-dialog#add>#prompt>#time>#am-pm>#hidden-txt,
+    .comp-dialog#add>#prompt>#time>#am-pm>button.ticked {
+        font-size: var(--sm-fn);
+    }
+
+    .comp-dialog#add>#prompt>#time>#am-pm>button {
+        font-size: 12px;
+        top: 90%;
+    }
+
+    .comp-dialog#add>#prompt>#actions>.comp-btn.text {
+        font-size: 14px;
+    }
+}

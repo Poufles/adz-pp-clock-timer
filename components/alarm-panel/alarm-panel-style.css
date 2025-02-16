@@ -13,7 +13,8 @@ main:has(section#clock>#comp-clock.clean)>.comp-alarm-panel {
     background-color: rgba(255, 254, 244, 0.1);
     border-radius: 15px;
     box-shadow: 0 0 15px 5px rgba(19, 30, 237, 0.3);
-    height: 900px;
+    height: 100%;
+    max-height: 900px;
     max-width: 590px;
     width: 100%;
     min-width: 400px;
@@ -82,7 +83,6 @@ main:has(section#clock>#comp-clock.clean)>.comp-alarm-panel {
     transition-behavior: allow-discrete;
     transition-duration: var(--sm-trans);
     transition-property: display height;
-    /* transition: var(--sm-trans); */
     overflow-y: scroll;
     scrollbar-width: none;
     scrollbar-color: transparent transparent;
@@ -125,6 +125,14 @@ main:has(section#clock>#comp-clock.clean)>.comp-alarm-panel {
         min-width: none;
         height: 40%;
         overflow: visible;
+        transition-behavior: allow-discrete;
+        transition-property: display height;
+        transition-duration: var(--sm-trans);
+        flex-shrink: 1;
+
+        @starting-style {
+            height: 0%;
+        }
     }
 
     .comp-alarm-panel>#btn-down {
@@ -182,9 +190,43 @@ main:has(section#clock>#comp-clock.clean)>.comp-alarm-panel {
         display: none;
         opacity: 0;
     }
-    
+
     main:has(section#clock>#comp-clock.clean)>.comp-alarm-panel>#btn-add {
         display: none;
         opacity: 0;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .comp-alarm-panel>#alarm-section>.alarm-item {
+        padding: 0 30px;
+    }
+
+    .comp-alarm-panel>#alarm-section>.alarm-item {
+        font-size: var(--xms-fn);
+    }
+
+    .comp-switch {
+        background-color: transparent;
+        border: 2px solid var(--primary-color);
+        border-radius: 20px;
+        box-shadow: 0 0 transparent;
+        height: 30px;
+        width: 60px;
+        padding: 0 3px;
+        position: relative;
+        transition: var(--sm-trans);
+    }
+    
+    .comp-switch > .circle-toggle {
+        background-color: var(--primary-color);
+        border-radius: 50%;
+        height: 15px;
+        width: 15px;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        top: 50%;
+        left: 25%;
+        transition: var(--sm-trans);
     }
 }

@@ -1,16 +1,30 @@
 @import '../../styles/root-style.css';
 
-.comp-dialog#add {
+.comp-dialog {
+    position: absolute;
+    display: none;
+    opacity: 0;
+    transition-behavior: allow-discrete;
+    transition-property: display opacity;
+    transition-duration: var(--sm-trans);
+    z-index: 99;
+}
+
+.comp-dialog.open#add {
     background-color: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(1px);
+    backdrop-filter: blur(5px);
     height: 100%;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
     top: 0;
     left: 0;
+    opacity: 1;
+
+    @starting-style {
+        opacity: 0;
+    }
 }
 
 .comp-dialog#add>#prompt {

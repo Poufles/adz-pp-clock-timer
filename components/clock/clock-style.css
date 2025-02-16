@@ -28,6 +28,7 @@
 
 #comp-clock:hover > #text-clock {
     font-size: var(--xlr-fn);
+    white-space: nowrap;
 }
 
 #comp-clock:active > #text-clock {

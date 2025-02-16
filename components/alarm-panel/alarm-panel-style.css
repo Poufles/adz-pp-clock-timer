@@ -16,6 +16,21 @@
     flex-direction: column;
     position: relative;
     transition: var(--sm-trans);
+    overflow: hidden;
+    transition-behavior: allow-discrete;
+    transition-property: display width;
+    transition-duration: var(--sm-trans);
+
+    @starting-style {
+        width: 0%;
+    }
+}
+
+.comp-alarm-panel.unexpanded {
+    box-shadow: 0 0 transparent;
+    width: 0%;
+    min-width: auto;
+    display: none;
 }
 
 .comp-alarm-panel>#btn-add {
@@ -23,6 +38,14 @@
     position: absolute;
     top: 93%;
     left: 50%;
+    opacity: 1;
+    transition-behavior: allow-discrete;
+    transition-property: display opacity;
+    transition-duration: var(--sm-trans);
+
+    @starting-style {
+        display: flex
+    }
 }
 
 .comp-alarm-panel>#btn-down {
@@ -50,10 +73,17 @@
     mask-image: linear-gradient(180deg, #FFF 55%, rgba(0, 0, 0, 0) 95%);
     height: 100%;
     padding-bottom: calc(90px * 7 + 20px);
-    transition: var(--sm-trans);
+    transition-behavior: allow-discrete;
+    transition-duration: var(--sm-trans);
+    transition-property: display height;
+    /* transition: var(--sm-trans); */
     overflow-y: scroll;
     scrollbar-width: none;
     scrollbar-color: transparent transparent;
+
+    @starting-style {
+        height: 100%;
+    }
 }
 
 .comp-alarm-panel>#alarm-section::-webkit-scrollbar {
@@ -87,7 +117,8 @@
         max-width: none;
         width: 100%;
         min-width: none;
-        height: 50%;
+        height: 40%;
+        overflow: visible;
     }
 
     .comp-alarm-panel>#btn-down {
@@ -99,15 +130,18 @@
     }
 
     .comp-alarm-panel>#alarm-section {
-        padding-bottom: calc(90px * 4 + 20px);
+        padding-bottom: calc(90px * 3 + 20px);
     }
 
     .comp-alarm-panel.unexpanded {
+        display: flex;
         height: 0px;
+        width: 100%;
     }
 
     .comp-alarm-panel.unexpanded>#btn-add {
         display: none;
+        opacity: 0;
     }
 
     .comp-alarm-panel.unexpanded>#btn-down {
@@ -120,6 +154,7 @@
     }
 
     .comp-alarm-panel.unexpanded>#alarm-section {
+        height: 0%;
         display: none;
     }
 }

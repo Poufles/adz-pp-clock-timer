@@ -2,6 +2,7 @@
 
 .comp-dialog#add {
     background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(1px);
     height: 100%;
     width: 100%;
     display: flex;
@@ -26,7 +27,6 @@
 
 .comp-dialog#add>#prompt>#time {
     display: flex;
-    gap: 5px;
     align-items: center;
 }
 
@@ -45,7 +45,7 @@
 }
 
 .comp-dialog#add>#prompt>#time>input[type=number]::placeholder {
-    color: inherit;
+    color: rgba(255, 254, 244, 0.3);
 }
 
 .comp-dialog#add>#prompt>#time>input[type=number]:focus {

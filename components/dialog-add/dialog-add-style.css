@@ -1,0 +1,110 @@
+@import '../../styles/root-style.css';
+
+.comp-dialog#add {
+    background-color: rgba(0, 0, 0, 0.4);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.comp-dialog#add>#prompt {
+    box-shadow: 0 0 4px 2px var(--drop-shadow-color);
+    background-color: rgba(255, 254, 244, 0.15);
+    border-radius: 15px;
+    height: 200px;
+    max-width: 560px;
+    padding: 30px 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.comp-dialog#add>#prompt>#time {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.comp-dialog#add>#prompt>#time>input[type=number] {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 3px solid transparent;
+    caret-color: transparent;
+    color: var(--primary-color);
+    font-size: 78px;
+    text-align: center;
+    width: 50px;
+    height: 80px;
+    transition: var(--sm-trans);
+    outline: none;
+}
+
+.comp-dialog#add>#prompt>#time>input[type=number]::placeholder {
+    color: inherit;
+}
+
+.comp-dialog#add>#prompt>#time>input[type=number]:focus {
+    border-bottom: 3px solid var(--primary-color);
+}
+
+.comp-dialog#add>#prompt>#time>label {
+    color: var(--primary-color);
+    font-size: 78px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+.comp-dialog#add>#prompt>#time>input::-webkit-outer-spin-button,
+.comp-dialog#add>#prompt>#time>input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+.comp-dialog#add>#prompt>#time>input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.comp-dialog#add>#prompt>#time>#am-pm {
+    position: relative;
+}
+
+.comp-dialog#add>#prompt>#time>#am-pm>#hidden-txt {
+    color: transparent;
+    font-size: 78px;
+}
+
+.comp-dialog#add>#prompt>#time>#am-pm>button {
+    background-color: transparent;
+    border: 0;
+    color: rgba(255, 254, 244, 0.3);
+    cursor: pointer;
+    font-size: var(--xms-fn);
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transition: var(--sm-trans);
+    z-index: 1;
+}
+
+.comp-dialog#add>#prompt>#time>#am-pm>button[value=am] {
+    top: 15%
+}
+
+.comp-dialog#add>#prompt>#time>#am-pm>button.ticked {
+    color: var(--primary-color);
+    font-size: 78px;
+    top: 50%;
+    z-index: 0;
+}
+
+.comp-dialog#add>#prompt>#actions {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}

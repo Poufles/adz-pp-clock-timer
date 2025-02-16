@@ -1,0 +1,80 @@
+@import 'root-style.css';
+@import '../components/clock/clock-style.css';
+@import '../components/alarm-panel/alarm-panel-style.css';
+@import '../components/buttons/buttons-icons-style.css';
+@import '../components/dialog-add/dialog-add-style.css';
+
+body {
+    background-image: var(--background-color);
+    height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main {
+    padding: 0 30px;
+    max-width: 1440px;
+    width: 100%;
+    display: flex;
+}
+
+main>section#clock {
+    width: 100%;
+    flex-basis: 1;
+    display: grid;
+    grid-template-areas:
+        'author'
+        'clock'
+        'socmed'
+    ;
+    justify-content: center;
+}
+
+main>section#clock>#author {
+    grid-area: author;
+
+    color: var(--primary-color);
+    text-align: center;
+
+}
+
+main>section#clock>#comp-clock {
+    grid-area: clock;
+
+    align-self: center;
+
+}
+
+main>section#clock>#socmed {
+    grid-area: socmed;
+
+    align-self: flex-end;
+    justify-self: center;
+    display: flex;
+    gap: 5px;
+}
+
+@media screen and (max-width: 980px) {
+    main {
+        padding: 30px 0;
+        height: 100dvh;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    main>section#clock {
+        height: 100%;
+        min-height: 450px;
+        grid-template-areas:
+            'author'
+            'socmed'
+            'clock'
+        ;
+        grid-auto-rows: min-content min-content 1fr;
+        gap: 5px;
+    }
+
+    main>section#clock>#comp-clock {
+    }
+}

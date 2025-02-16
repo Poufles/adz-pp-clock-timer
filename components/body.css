@@ -23,7 +23,7 @@ main {
     display: flex;
 }
 
-main>.mock-up {
+main>#clock {
     color: white;
     height: 100%;
     width: 100%;
@@ -41,7 +41,7 @@ main>.mock-up {
         overflow: hidden;
     }
 
-    main>.mock-up {
+    main>#clock {
         height: 100%;
         min-height: 450px;
     }

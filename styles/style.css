@@ -16,6 +16,7 @@ main {
     padding: 0 30px;
     max-width: 1440px;
     width: 100%;
+    min-height: 900px;
     display: flex;
 }
 
@@ -29,6 +30,28 @@ main>section#clock {
         'socmed'
     ;
     justify-content: center;
+    position: relative;
+}
+
+main>section#clock>#btn-hamburger {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0;
+    transition-duration: var(--sm-trans);
+    transition-behavior: allow-discrete;
+    transition-property: display opacity;
+    transition: opacity var(--sm-trans) var(--md-trans);
+}
+
+main:has(>.comp-alarm-panel.unexpanded)>section#clock>#btn-hamburger {
+    display: flex;
+    opacity: 1;
+    
+    @starting-style {
+        opacity: 0;
+    }
 }
 
 main>section#clock>#author {
@@ -73,5 +96,9 @@ main>section#clock>#socmed {
         ;
         grid-auto-rows: min-content min-content 1fr;
         gap: 5px;
+    }
+
+    main>section#clock>#btn-hamburger {
+        display: none !important;
     }
 }

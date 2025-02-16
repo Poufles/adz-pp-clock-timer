@@ -1,11 +1,16 @@
 const comp_alarm_panel = document.querySelector('.comp-alarm-panel');
-const alarm_btn_down = comp_alarm_panel.querySelector('#btn-down');
-const alarm_btn_close = comp_alarm_panel.querySelector('#btn-exit');
+const btn_alarm_down = comp_alarm_panel.querySelector('#btn-down');
+const btn_alarm_close = comp_alarm_panel.querySelector('#btn-exit');
+const btn_alarm_open = document.querySelector('#clock>#btn-hamburger');
 
-alarm_btn_down.addEventListener('click', () => {
+btn_alarm_down.addEventListener('click', () => {
         comp_alarm_panel.classList.toggle('unexpanded');
 });
 
-alarm_btn_close.addEventListener('click', () => {
-        
+btn_alarm_close.addEventListener('click', () => {
+        comp_alarm_panel.classList.toggle('unexpanded');
+});
+
+btn_alarm_open.addEventListener('click', () => {
+        comp_alarm_panel.classList.toggle('unexpanded');
 });
